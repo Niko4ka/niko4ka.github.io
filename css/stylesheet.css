@@ -1,0 +1,18 @@
+body{
+    background-color: #ffe7de;
+}
+
+h1{
+    text-align: center;
+}
+
+div{
+    height: 50%;
+    width: 20%;
+}
+
+div img{
+    height: fit-content;
+    position: relative;
+    align-self: center;
+}
