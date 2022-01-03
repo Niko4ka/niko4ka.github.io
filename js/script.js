@@ -12,8 +12,8 @@ var x = setInterval(function() {
   
   if (distance < 0) {
     clearInterval(x);
-    /*document.getElementById("timeLeft").innerHTML = "listen to our debut EP";
-    document.getElementById("timer").innerHTML = "«YOU ARE AWARE OF EVERYTHING THAT IS GOING ON»";*/
+    document.getElementById("timerText").innerHTML = "Покупай мой курс!";
+    document.getElementById("timer").innerHTML = "";
   }
 }, 1000);
 
