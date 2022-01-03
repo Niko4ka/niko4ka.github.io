@@ -72,3 +72,7 @@ div img{
       animation-duration: 3s;
     }
 }
+
+.buyCourse{
+    display: none;
+}
