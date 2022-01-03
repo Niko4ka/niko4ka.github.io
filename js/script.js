@@ -10,8 +10,12 @@ var x = setInterval(function() {
 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("timerText").innerHTML = "Покупай мой курс!";
-        document.getElementById("timer").innerHTML = "";
+        document.getElementById("timerText").innerHTML = "Привет! Меня зовут Никочка!";
+        document.getElementById("timer").innerHTML = "Покупай мой курс :)";
+        var buttons = document.getElementsByClassName("buyCourse");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].style.display = "block";
+        }
     }
 }, 1000);
 
