@@ -13,7 +13,7 @@ body{
 div{
     margin-left: 0;
     margin-right: 0;
-    padding-bottom: 5px;
+    padding-bottom: 3px;
 }
 
 p{
@@ -22,7 +22,7 @@ p{
 
 .first{
     position: absolute;
-    height: 100vh;
+    height: 95vh;
     width: fit-content;
     left: 50%;
     transform: translateX(-50%);
@@ -46,7 +46,7 @@ p{
     height: fit-content;
     max-width: fit-content;
     right: 50%;
-    top: 12%;
+    top: 7%;
     opacity: 1;
     background-color: white;
 
@@ -56,20 +56,6 @@ p{
     display: inline-block;
     z-index: 2;
 }
-
-/*.greeting::after {
-    content: '';
-    width: 10%;
-    height: 30%;
-    border-left: 4px solid #caecff;
-    border-bottom: 5px solid #caecff;
-    position: absolute;
-    bottom: -12%;
-    left: 7%;
-    background: white;
-    transform: skewX(-20deg) skewY(-40deg);
-    z-index: -1;
-}*/
 
 .greeting p{
     text-align: center;
@@ -96,18 +82,23 @@ p{
     }
 }
 
+.more{
+    margin-top: 30px;
+}
+
 .more p{
-    /*font-size: large;*/
     font-family: newFont;
 }
 
+.timerBlock{
+    position: relative;
+    width: 100%;
+}
+
 .timer{
-    margin-top: 3%;
-    /*border: black 3px solid;
-    border-radius: 15px;*/
     height: max-content;
     min-width: fit-content;
-    max-width: 30%;
+    max-width: 50%;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
