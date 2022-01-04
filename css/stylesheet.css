@@ -6,14 +6,16 @@ body{
     position: absolute;
     margin-top: 0;
     margin-left: 0;
-    width: 100vw;
-    height: 100%;
+    width: 95vw;
+    height: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 div{
     margin-left: 0;
     margin-right: 0;
-    padding-bottom: 3px;
+    /*padding-bottom: 3px;*/
 }
 
 p{
@@ -21,11 +23,19 @@ p{
 }
 
 .first{
-    position: absolute;
-    height: 95vh;
+    position: relative;
+    height: 100vh;
     min-width: fit-content;
     width: 100%;
     left: 50%;
+    transform: translateX(-50%);
+}
+.second{
+    position: relative;
+    height: 100vh;
+    width: 95%;
+    left: 50%;
+    margin: 0px;
     transform: translateX(-50%);
 }
 
@@ -102,6 +112,7 @@ p{
 .timerBlock{
     position: relative;
     width: 100%;
+    margin-top: 30px;
 }
 
 .timer{
@@ -124,7 +135,7 @@ p{
 @keyframes LeftAppear{
     0%{
         opacity: 0;
-        transform: translateX(-500%);
+        transform: translateX(-300%);
     }
     100%{
         opacity: 1;
@@ -141,6 +152,37 @@ p{
 
 .buyCourse {
     display: none;
+}
+
+.infoLeft {
+    background-color: transparent;
+    width: 75%;
+    left: 50%;
+    padding: 1px 10px;
+    margin: 10px 0px;
+    transform: translateX(-50%);
+    position: relative;
+    border-radius: 30px;
+    border: #ff4600 3px solid;
+}
+
+.infoLeft p{
+    font-family: newFont;
+    color: #ff4600;
+    padding: 0px 5px;
+}
+
+.info{
+    top: 2%;
+    position: relative;
+    width: 95%;
+    margin: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.opacity0 {
+    opacity: 0;
 }
 
 @font-face {

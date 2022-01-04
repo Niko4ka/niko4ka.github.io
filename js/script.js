@@ -43,10 +43,21 @@ let observerLeft = new IntersectionObserver(entries => {
         if (entry.isIntersecting) {
             // добавить ему CSS-класс
             greet.classList.add('appearLeft');
-            return;
         }
-        greet.classList.remove('appearLeft .main');
     });
 });
 observerLeft.observe(document.querySelector('.timerBlock'));
 
+let observerInfo = new IntersectionObserver(entries => {
+    // перебор записей
+    entries.forEach(entry => {
+        // если элемент появился
+        const info = entry.target.querySelectorAll('.infoLeft');
+        if (entry.isIntersecting) {
+            // добавить ему CSS-класс
+            info.forEach(elem => elem.classList.add('appearLeft'));
+            info.forEach(elem => elem.classList.remove('opacity0'));
+        }
+    });
+});
+observerInfo.observe(document.querySelector('.info'));
