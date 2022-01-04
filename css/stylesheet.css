@@ -61,14 +61,16 @@ p{
     opacity: 1;
 
     bottom: 75%;
+}
 
+.message {
     border-radius: 30px;
     display: inline-block;
     z-index: 2;
     background-color: #4bcfff;
 }
 
-.greeting p{
+.message p{
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
@@ -166,6 +168,12 @@ p{
     border: #ff4600 3px solid;
 }
 
+@media screen and (min-width: 600px) {
+    .infoLeft{
+        width: 50%;
+    }
+}
+
 .infoLeft p{
     font-family: newFont;
     color: #ff4600;
@@ -183,6 +191,25 @@ p{
 
 .opacity0 {
     opacity: 0;
+}
+
+.secondMain {
+    width: 100%;
+    height: fit-content;
+    min-width: fit-content;
+}
+
+.secondMain img {
+    max-width: 100%;
+    max-height: 100%;
+    left: 10%;
+    bottom: 1%;
+}
+
+.infoMessage {
+    position: absolute;
+    left: 120px;
+    top: 30%;
 }
 
 @font-face {

@@ -61,3 +61,18 @@ let observerInfo = new IntersectionObserver(entries => {
     });
 });
 observerInfo.observe(document.querySelector('.info'));
+
+let observerSecond = new IntersectionObserver(entries => {
+    // перебор записей
+    entries.forEach(entry => {
+        // если элемент появился
+        const message = entry.target.querySelector(".message");
+        if (entry.isIntersecting) {
+            // добавить ему CSS-класс
+            message.classList.add('appearDown');
+            return;
+        }
+        message.classList.remove('appearDown');
+    });
+});
+observerSecond.observe(document.querySelector('.secondMain'));
