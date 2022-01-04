@@ -1,39 +1,63 @@
+html{
+    width: 100vw;
+}
 body{
     background-color: #ffe7de;
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100vw;
+    height: 100%;
 }
 
-h1{
+div{
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 5px;
+}
+
+p{
     text-align: center;
 }
 
-.main{
-    height: fit-content;
-    width: 100vw;
+.first{
+    position: absolute;
+    height: 100vh;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-div img{
-    height: 70vh;
+.main{
+    width: 100%;
+}
+
+.main img{
+    max-height: 100%;
+    max-width: 100%;
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
-    align-self: center;
 }
 
-.timerBlock{
+.greeting{
     position: absolute;
-    width: fit-content;
-    margin-left: 50%;
-    transform: translateX(10%);
+    width: 50%;
+    height: fit-content;
+    max-width: fit-content;
+    right: 50%;
+    top: 12%;
     opacity: 1;
     background-color: white;
 
+    bottom: 75%;
+
     border-radius: 30px;
-    border: 3.5px solid #caecff;
     display: inline-block;
     z-index: 2;
 }
 
-.timerBlock::after {
+/*.greeting::after {
     content: '';
     width: 10%;
     height: 30%;
@@ -45,34 +69,80 @@ div img{
     background: white;
     transform: skewX(-20deg) skewY(-40deg);
     z-index: -1;
-}
+}*/
 
-.timerBlock p{
+.greeting p{
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: -5px;
 }
 
-@keyframes timerBlockAppear{
+@keyframes DownAppear{
     0%{
-      transform: translateX(-500%);
+        opacity: 0;
+        transform: translateY(100%);
     }
-    30%{
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference){
+    .appearDown{
+      animation-name: DownAppear;
+      animation-duration: 2s;
+    }
+}
+
+.more p{
+    /*font-size: large;*/
+    font-family: newFont;
+}
+
+.timer{
+    margin-top: 3%;
+    /*border: black 3px solid;
+    border-radius: 15px;*/
+    height: max-content;
+    min-width: fit-content;
+    max-width: 30%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timer p{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    font-size: large;
+}
+
+@keyframes LeftAppear{
+    0%{
+        opacity: 0;
         transform: translateX(-500%);
     }
     100%{
-        transform: translateX(10%);
+        opacity: 1;
+        transform: translateX(-50%);
     }
 }
 
 @media (prefers-reduced-motion: no-preference){
     .appearLeft{
-      animation-name: timerBlockAppear;
-      animation-duration: 3s;
+        animation-name: LeftAppear;
+        animation-duration: 2s;
     }
 }
 
-.buyCourse{
+.buyCourse {
     display: none;
+}
+
+@font-face {
+    font-family: newFont; /* Гарнитура шрифта */
+    src: url("/fonts/MusticaproSemibold.otf"); /* Путь к файлу со шрифтом */
 }
