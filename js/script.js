@@ -10,7 +10,7 @@ var x = setInterval(function() {
 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("timerText").innerHTML = "Привет! Меня зовут Никочка!";
+        document.getElementById("timerText").innerHTML = "";
         document.getElementById("timer").innerHTML = "Покупай мой курс :)";
         var buttons = document.getElementsByClassName("buyCourse");
         for (var i = 0; i < buttons.length; i++) {
@@ -19,15 +19,34 @@ var x = setInterval(function() {
     }
 }, 1000);
 
-//timer block animation
-const observer = new IntersectionObserver(entries => {
+//greeting animation
+let observerDown = new IntersectionObserver(entries => {
     // перебор записей
     entries.forEach(entry => {
         // если элемент появился
+        const greet = entry.target.querySelector(".greeting");
         if (entry.isIntersecting) {
             // добавить ему CSS-класс
-            entry.target.classList.add('appearLeft');
+            greet.classList.add('appearDown');
+            return;
         }
+        greet.classList.remove('appearDown');
     });
 });
-observer.observe(document.querySelector('.timerBlock'));
+observerDown.observe(document.querySelector('.main'));
+
+let observerLeft = new IntersectionObserver(entries => {
+    // перебор записей
+    entries.forEach(entry => {
+        // если элемент появился
+        const greet = entry.target.querySelector(".timer");
+        if (entry.isIntersecting) {
+            // добавить ему CSS-класс
+            greet.classList.add('appearLeft');
+            return;
+        }
+        greet.classList.remove('appearLeft .main');
+    });
+});
+observerLeft.observe(document.querySelector('.timerBlock'));
+
