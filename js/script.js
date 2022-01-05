@@ -39,28 +39,16 @@ let observerLeft = new IntersectionObserver(entries => {
     // перебор записей
     entries.forEach(entry => {
         // если элемент появился
-        const greet = entry.target.querySelector(".timer");
         if (entry.isIntersecting) {
             // добавить ему CSS-класс
-            greet.classList.add('appearLeft');
+            entry.target.classList.add('appearLeft');
+            entry.target.classList.remove('opacity0');
         }
     });
 });
-observerLeft.observe(document.querySelector('.timerBlock'));
-
-let observerInfo = new IntersectionObserver(entries => {
-    // перебор записей
-    entries.forEach(entry => {
-        // если элемент появился
-        const info = entry.target.querySelectorAll('.infoLeft');
-        if (entry.isIntersecting) {
-            // добавить ему CSS-класс
-            info.forEach(elem => elem.classList.add('appearLeft'));
-            info.forEach(elem => elem.classList.remove('opacity0'));
-        }
-    });
-});
-observerInfo.observe(document.querySelector('.info'));
+observerLeft.observe(document.querySelector('.timer'));
+observerLeft.observe(document.querySelector('.info'));
+observerLeft.observe(document.querySelector('.fourFacts'));
 
 let observerSecond = new IntersectionObserver(entries => {
     // перебор записей
@@ -75,4 +63,19 @@ let observerSecond = new IntersectionObserver(entries => {
         message.classList.remove('appearDown');
     });
 });
-observerSecond.observe(document.querySelector('.secondMain'));
+observerSecond.observe(document.querySelector('.aboutMeDiv'));
+
+let observerThird = new IntersectionObserver(entries => {
+    // перебор записей
+    entries.forEach(entry => {
+        // если элемент появился
+        const message = entry.target.querySelector(".message");
+        if (entry.isIntersecting) {
+            // добавить ему CSS-класс
+            message.classList.add('appearDown');
+            return;
+        }
+        message.classList.remove('appearDown');
+    });
+});
+observerThird.observe(document.querySelector('.thirdMain'));
