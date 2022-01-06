@@ -13,6 +13,12 @@
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     </head>
     <body>
+        <div id="darkness">
+            <div id="window">
+                <a href="#body" class="close"><img src="photos/icons/close.png"></a>
+                <h2>Информация об оплате</h2>
+            </div>
+        </div>
         <div class="first">
             <div class="main">
                 <div class="greeting message">
@@ -34,14 +40,7 @@
                 </div>
             </div>
 
-            <a href="#zatemnenie"><button class="buyCourse"><p>Купить курс</p></button></a>
-
-            <div id="zatemnenie">
-                <div id="okno">
-                    <h2>Информация об оплате</h2>
-                    <a href="#" class="close"><img src="photos/icons/close.png"></a>
-                </div>
-            </div>
+            <a href="#darkness"><button class="buyCourse"><p>Купить курс</p></button></a>
 
             <div id="infoBuy">
                 <img class="" onclick="close();" src="photos/icons/close.png">
@@ -95,7 +94,8 @@
             <div class="info opacity0">
                 <div class="infoLeft" id="info1" onclick="openMore(1)">
                     <p>Тариф «Минимум»</p>
-                    <p><s>499₽</s> 299₽</p>
+                    <p style="margin-bottom: 3px;"><s style="opacity: 0.5;">499₽</s> 299₽</p>
+                    <p style="font-size: small; opacity: 0.3; margin: 2px;">Подробнее</p>
                     <div class="additional" id="firstAdditional">
                         <p>Включает в себя:</p>
                         <ul>
@@ -115,7 +115,8 @@
                 </div>
                 <div class="infoLeft" id="info2" onclick="openMore(2)">
                     <p>Тариф «Медиум»</p>
-                    <p><s>899₽</s> 499₽</p>
+                    <p style="margin-bottom: 3px;"><s style="opacity: 0.5">899₽</s> 499₽</p>
+                    <p style="font-size: small; opacity: 0.3; margin: 2px;">Подробнее</p>
                     <div class="additional" id="secondAdditional">
                         <p>Включает в себя:</p>
                         <ul>
@@ -135,7 +136,8 @@
                 </div>
                 <div class="infoLeft" id="info3" onclick="openMore(3)">
                     <p>Тариф «Максимум»</p>
-                    <p><s>1499₽</s> 999₽</p>
+                    <p style="margin-bottom: 3px;"><s style="opacity: 0.5">1499₽</s> 999₽</p>
+                    <p style="font-size: small; opacity: 0.3; margin: 2px;">Подробнее</p>
                     <div class="additional" id="thirdAdditional">
                         <p>Включает в себя:</p>
                         <ul>
@@ -161,7 +163,7 @@
                 </div>
             </div>
 
-            <a href="#zatemnenie"><button id="lastButton" class="buyCourse"><p>Купить курс</p></button></a>
+            <a href="#darkness"><button id="lastButton" class="buyCourse"><p>Купить курс</p></button></a>
 
 
         </div>
