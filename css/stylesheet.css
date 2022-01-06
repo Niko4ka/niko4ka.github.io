@@ -16,6 +16,10 @@ p{
     font-family: newFont;
 }
 
+a{
+    text-decoration: none;
+}
+
 div{
     margin-left: 0;
     margin-right: 0;
@@ -150,6 +154,52 @@ p{
 
 .buyCourse {
     display: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4600;
+    border-color: white;
+    border-radius: 10px;
+    max-width: 50%;
+}
+
+.buyCourse:hover{
+    border: 2px solid white;
+    box-shadow: inset 0px 0px 81px 17px #ff4600, 0px 0px 20px 4px #ff4600;
+}
+
+.buyCourse p{
+    padding: 0 10px;
+    color: white;
+    font-size: large;
+}
+
+@keyframes ChangeOpacity{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference){
+    .opacityChange{
+        animation-name: ChangeOpacity;
+        animation-duration: 2s;
+    }
+}
+
+#infoBuy{
+    display: none;
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    height: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .aboutMeDiv {
@@ -213,6 +263,7 @@ p{
     position: relative;
     border-radius: 30px;
     border: #ff4600 3px solid;
+    cursor:pointer;
 }
 
 .infoLeft:hover {
@@ -226,6 +277,10 @@ p{
 
 .additional{
     display: none;
+}
+
+.additional p{
+    text-align: left;
 }
 
 .info{
@@ -271,4 +326,62 @@ p{
 @font-face {
     font-family: newFont; /* Гарнитура шрифта */
     src: url("/fonts/MusticaproSemibold.otf"); /* Путь к файлу со шрифтом */
+}
+
+#zatemnenie {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+#okno {
+    min-width: fit-content;
+    width: 50%;
+    height: fit-content;
+    text-align: center;
+    padding: 15px;
+    border: 3px solid #ff4600;
+    border-radius: 10px;
+    color: #ff4600;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: #fff;
+}
+#zatemnenie:target {display: block;}
+
+.close {
+    width: fit-content;
+    height: fit-content;
+    cursor:pointer;
+    position: absolute;
+    padding: 10px 5px;
+    top: 0;
+    right: 0;
+    transform: translateX(40%);
+}
+
+.close img{
+    width: 7%;
+}
+
+.promotionBlock {
+    width: 100%;
+    height: fit-content;
+}
+
+.promotion{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#lastButton{
+    margin-bottom: 30px;
 }

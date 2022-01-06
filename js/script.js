@@ -15,6 +15,7 @@ var x = setInterval(function() {
         var buttons = document.getElementsByClassName("buyCourse");
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].style.display = "block";
+            buttons[i].classList.add("opacityChange");
         }
     }
 }, 1000);
@@ -79,3 +80,66 @@ let observerThird = new IntersectionObserver(entries => {
     });
 });
 observerThird.observe(document.querySelector('.thirdMain'));
+
+var first = 0;
+var second = 0;
+var third = 0;
+
+function openMore(x) {
+    if (x == 1) {
+        if (first == 0) {
+            first = 1;
+            document.getElementById('firstAdditional').style.display = "block";
+            return;
+        } else {
+            first = 0;
+            document.getElementById('firstAdditional').style.display = "none";
+        }
+    }
+
+    if (x == 2) {
+        if (second == 0) {
+            second = 1;
+            document.getElementById('secondAdditional').style.display = "block";
+        } else {
+            second = 0;
+            document.getElementById('secondAdditional').style.display = "none";
+        }
+    }
+
+    if (x == 3) {
+        if (third == 0) {
+            third = 1;
+            document.getElementById('thirdAdditional').style.display = "block";
+        } else {
+            third = 0;
+            document.getElementById('thirdAdditional').style.display = "none";
+        }
+    }
+}
+
+function buy() {
+    document.getElementById('infoBuy').style.display = "block";
+}
+
+function close() {
+    document.getElementById('infoBuy').style.display = "none";
+}
+
+let countDownDatePromo = new Date("Jan 14, 2022 00:00:00").getTime();
+let y = setInterval(function() {
+    let now = new Date().getTime();
+    let distance = countDownDatePromo - now;
+
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor(distance % (1000 * 60) / (1000));
+    document.getElementById("promotionTimer").innerHTML = days + "д " + hours + "ч " + minutes + "м " + seconds + "с";
+
+    if (distance < 0) {
+        clearInterval(y);
+        document.getElementById("promotionText").innerHTML = "";
+        document.getElementById("promotionTimer").innerHTML = "";
+    }
+}, 1000);
