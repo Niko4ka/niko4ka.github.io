@@ -143,3 +143,15 @@ let y = setInterval(function() {
         document.getElementById("promotionTimer").innerHTML = "";
     }
 }, 1000);
+function sber(){
+    document.getElementById('sber').style.display = "block";
+    document.getElementById('qiwi').style.display = "none";
+    document.getElementById('sberDiv').style.backgroundColor = "#bbbbbb";
+    document.getElementById('qiwiDiv').style.backgroundColor = "white";
+}
+function qiwi(){
+    document.getElementById('qiwi').style.display = "block";
+    document.getElementById('sber').style.display = "none";
+    document.getElementById('qiwiDiv').style.backgroundColor = "#bbbbbb";
+    document.getElementById('sberDiv').style.backgroundColor = "white";
+}

@@ -338,8 +338,7 @@ p{
     display: none;
 }
 #window {
-    min-width: fit-content;
-    width: 50%;
+    width: fit-content;
     height: fit-content;
     text-align: center;
     padding: 15px;
@@ -348,11 +347,34 @@ p{
     color: #ff4600;
     position: sticky;
     top: 50%;
-    left: 50%;
-    right: 0;
     margin: auto;
     background: #fff;
+    transform: translateY(-50%);
+    max-width: 700px;
 }
+
+.paymentLogo{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.paymentLogo img{
+    padding-top: 15px;
+    width: 50%;
+}
+
+.paymentLogo p{
+    margin: 5px 0;
+}
+
+#sber{
+    display: none;
+}
+
+#qiwi{
+    display: none;
+}
+
 #darkness:target {display: block;}
 
 .close {
