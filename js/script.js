@@ -1,4 +1,4 @@
-var countDownDate = new Date("Jan 7, 2022 00:00:00").getTime();
+var countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
 var x = setInterval(function() {
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -125,24 +125,6 @@ function buy() {
 function close() {
     document.getElementById('infoBuy').style.display = "none";
 }
-
-let countDownDatePromo = new Date("Jan 14, 2022 00:00:00").getTime();
-let y = setInterval(function() {
-    let now = new Date().getTime();
-    let distance = countDownDatePromo - now;
-
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor(distance % (1000 * 60) / (1000));
-    document.getElementById("promotionTimer").innerHTML = days + "д " + hours + "ч " + minutes + "м " + seconds + "с";
-
-    if (distance < 0) {
-        clearInterval(y);
-        document.getElementById("promotionText").innerHTML = "";
-        document.getElementById("promotionTimer").innerHTML = "";
-    }
-}, 1000);
 function sber(){
     document.getElementById('sber').style.display = "block";
     document.getElementById('qiwi').style.display = "none";
