@@ -147,7 +147,7 @@ function showSlides() {
         dots[i].className = dots[i].className.replace(" slide-dot-active", "");
     }
     dots[slideIndex-1].className += " slide-dot-active";
-    timerSlides = setTimeout(plusSlides, 7000, 1);
+    //timerSlides = setTimeout(plusSlides, 7000, 1);
 }
 
 function plusSlides(n) {
