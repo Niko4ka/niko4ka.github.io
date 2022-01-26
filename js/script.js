@@ -1,33 +1,30 @@
-var countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
-var x = setInterval(function() {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
+let countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
+let x = setInterval(function() {
+    let now = new Date().getTime();
+    let distance = countDownDate - now;
 
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     document.getElementById("timer").innerHTML = days + "д " + hours + "ч " + minutes + "м";
 
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("timerText").innerHTML = "";
         document.getElementById("timer").innerHTML = "Покупай мой курс :)";
-        var buttons = document.getElementsByClassName("buyCourse");
-        for (var i = 0; i < buttons.length; i++) {
+        let buttons = document.getElementsByClassName("buyCourse");
+        for (let i = 0; i < buttons.length; i++) {
             buttons[i].style.display = "block";
             buttons[i].classList.add("opacityChange");
         }
     }
 }, 1000);
 
-//greeting animation
+//intersection animations
 let observerDown = new IntersectionObserver(entries => {
-    // перебор записей
     entries.forEach(entry => {
-        // если элемент появился
         const greet = entry.target.querySelector(".greeting");
         if (entry.isIntersecting) {
-            // добавить ему CSS-класс
             greet.classList.add('appearDown');
             return;
         }
@@ -37,11 +34,8 @@ let observerDown = new IntersectionObserver(entries => {
 observerDown.observe(document.querySelector('.main'));
 
 let observerLeft = new IntersectionObserver(entries => {
-    // перебор записей
     entries.forEach(entry => {
-        // если элемент появился
         if (entry.isIntersecting) {
-            // добавить ему CSS-класс
             entry.target.classList.add('appearLeft');
             entry.target.classList.remove('opacity0');
         }
@@ -52,12 +46,9 @@ observerLeft.observe(document.querySelector('.info'));
 observerLeft.observe(document.querySelector('.fourFacts'));
 
 let observerSecond = new IntersectionObserver(entries => {
-    // перебор записей
     entries.forEach(entry => {
-        // если элемент появился
         const message = entry.target.querySelector(".message");
         if (entry.isIntersecting) {
-            // добавить ему CSS-класс
             message.classList.add('appearDown');
             return;
         }
@@ -67,12 +58,9 @@ let observerSecond = new IntersectionObserver(entries => {
 observerSecond.observe(document.querySelector('.aboutMeDiv'));
 
 let observerThird = new IntersectionObserver(entries => {
-    // перебор записей
     entries.forEach(entry => {
-        // если элемент появился
         const message = entry.target.querySelector(".message");
         if (entry.isIntersecting) {
-            // добавить ему CSS-класс
             message.classList.add('appearDown');
             return;
         }
@@ -81,9 +69,9 @@ let observerThird = new IntersectionObserver(entries => {
 });
 observerThird.observe(document.querySelector('.thirdMain'));
 
-var first = 0;
-var second = 0;
-var third = 0;
+let first = 0;
+let second = 0;
+let third = 0;
 
 function openMore(x) {
     if (x == 1) {
@@ -118,13 +106,11 @@ function openMore(x) {
     }
 }
 
-function buy() {
-    document.getElementById('infoBuy').style.display = "block";
-}
-
 function close() {
     document.getElementById('infoBuy').style.display = "none";
 }
+
+//payment methods
 function sber(){
     document.getElementById('sber').style.display = "block";
     document.getElementById('qiwi').style.display = "none";
@@ -136,4 +122,44 @@ function qiwi(){
     document.getElementById('sber').style.display = "none";
     document.getElementById('qiwiDiv').style.backgroundColor = "#bbbbbb";
     document.getElementById('sberDiv').style.backgroundColor = "white";
+}
+
+//feedback carousel
+let slideIndex = 1;
+let timerSlides;
+
+function showSlides() {
+    clearTimeout(timerSlides);
+    let slides = document.getElementsByClassName("mySlides");
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    if (slideIndex < 1) {
+        slideIndex = slides.length;
+    }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+
+    let dots = document.getElementsByClassName("slide-dot");
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" slide-dot-active", "");
+    }
+    dots[slideIndex-1].className += " slide-dot-active";
+    timerSlides = setTimeout(plusSlides, 7000, 1);
+}
+
+function plusSlides(n) {
+    slideIndex += n;
+    showSlides();
+}
+
+function currentSlide(n) {
+    slideIndex = n;
+    showSlides();
+}
+
+window.onload = function() {
+    showSlides();
 }
