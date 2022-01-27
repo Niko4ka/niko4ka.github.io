@@ -110,6 +110,25 @@ function close() {
     document.getElementById('infoBuy').style.display = "none";
 }
 
+//sale timer
+let countDownDatePromo = new Date("Jan 30, 2022 23:59:59").getTime();
+let y = setInterval(function() {
+    let now = new Date().getTime();
+    let distance = countDownDatePromo - now;
+
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor(distance % (1000 * 60) / (1000));
+    document.getElementById("promotionTimer").innerHTML = days + "д " + hours + "ч " + minutes + "м " + seconds + "с";
+
+    if (distance < 0) {
+        clearInterval(y);
+        document.getElementById("promotionText").innerHTML = "";
+        document.getElementById("promotionTimer").innerHTML = "";
+    }
+}, 1000);
+
 //payment methods
 function sber(){
     document.getElementById('sber').style.display = "block";
