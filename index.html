@@ -112,7 +112,7 @@
             <div class="info opacity0">
                 <div class="infoLeft" id="info1" onclick="openMore(1)">
                     <p>Тариф «Минимум»</p>
-                    <p style="margin-bottom: 3px;">499₽</p>
+                    <p style="margin-bottom: 3px;"><s style="opacity: 0.5">499₽</s> 450₽</p>
                     <p style="font-size: small; opacity: 0.3; margin: 2px;">Подробнее</p>
                     <div class="additional" id="firstAdditional">
                         <p>Включает в себя:</p>
@@ -133,7 +133,7 @@
                 </div>
                 <div class="infoLeft" id="info2" onclick="openMore(2)">
                     <p>Тариф «Медиум»</p>
-                    <p style="margin-bottom: 3px;">899₽</p>
+                    <p style="margin-bottom: 3px;"><s style="opacity: 0.5">899₽</s> 810₽</p>
                     <p style="font-size: small; opacity: 0.3; margin: 2px;">Подробнее</p>
                     <div class="additional" id="secondAdditional">
                         <p>Включает в себя:</p>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="infoLeft" id="info3" onclick="openMore(3)">
                     <p>Тариф «Максимум»</p>
-                    <p style="margin-bottom: 3px;">1499₽</p>
+                    <p style="margin-bottom: 3px;"><s style="opacity: 0.5">1499₽</s> 1350₽</p>
                     <p style="font-size: small; opacity: 0.3; margin: 2px;">Подробнее</p>
                     <div class="additional" id="thirdAdditional">
                         <p>Включает в себя:</p>
@@ -170,6 +170,14 @@
                             <li><p>Постоянное общение со мной и прояснение всех моментов, если что-то непонятно </p></li>
                         </ul>
                     </div>
+                </div>
+            </div>
+
+            <div class="promotionBlock">
+                <div class="promotion">
+                    <p id="promotionText">До конца скидки осталось:</p>
+                    <p id="promotionTimer"></p>
+                    <span class="triangle"></span>
                 </div>
             </div>
 
