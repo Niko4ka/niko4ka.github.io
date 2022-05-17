@@ -10,8 +10,8 @@ let x = setInterval(function() {
 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("timerText").innerHTML = "";
-        document.getElementById("timer").innerHTML = "Покупай мой курс :)";
+        //document.getElementById("timerText").innerHTML = "";
+        document.getElementById("timer").innerHTML = "";
         let buttons = document.getElementsByClassName("buyCourse");
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].style.display = "block";
